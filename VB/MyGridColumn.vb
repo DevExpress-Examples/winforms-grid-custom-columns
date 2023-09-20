@@ -1,44 +1,45 @@
-Imports Microsoft.VisualBasic
-Imports System
 Imports DevExpress.Utils.Serializing
 Imports DevExpress.XtraGrid.Columns
 Imports DevExpress.XtraGrid.Views.Base
 
 Namespace MyXtraGrid
 
-	Public Class MyGridColumn
-		Inherits GridColumn
-		Public Sub New()
-		End Sub
+    Public Class MyGridColumn
+        Inherits GridColumn
 
-		Private customDataValue As String = String.Empty
+        Public Sub New()
+        End Sub
 
-		<XtraSerializableProperty()> _
-		Public Property CustomData() As String
-			Get
-				Return customDataValue
-			End Get
-			Set(ByVal value As String)
-				customDataValue = value
-			End Set
-		End Property
+        Private customDataValue As String = String.Empty
 
-		Protected Overrides Sub Assign(ByVal column As GridColumn)
-			MyBase.Assign(column)
-			If TypeOf column Is MyGridColumn Then
-				Me.CustomData = (CType(column, MyGridColumn)).CustomData
-			End If
-		End Sub
-	End Class
+        <XtraSerializableProperty()>
+        Public Property CustomData As String
+            Get
+                Return customDataValue
+            End Get
 
-	Public Class MyGridColumnCollection
-		Inherits GridColumnCollection
-		Public Sub New(ByVal view As ColumnView)
-			MyBase.New(view)
-		End Sub
+            Set(ByVal value As String)
+                customDataValue = value
+            End Set
+        End Property
 
-		Protected Overrides Function CreateColumn() As GridColumn
-			Return New MyGridColumn()
-		End Function
-	End Class
+        Protected Overrides Sub Assign(ByVal column As GridColumn)
+            MyBase.Assign(column)
+            If TypeOf column Is MyGridColumn Then
+                CustomData = CType(column, MyGridColumn).CustomData
+            End If
+        End Sub
+    End Class
+
+    Public Class MyGridColumnCollection
+        Inherits GridColumnCollection
+
+        Public Sub New(ByVal view As ColumnView)
+            MyBase.New(view)
+        End Sub
+
+        Protected Overrides Function CreateColumn() As GridColumn
+            Return New MyGridColumn()
+        End Function
+    End Class
 End Namespace

@@ -1,16 +1,14 @@
-﻿Imports Microsoft.VisualBasic
 Imports System.Reflection
-Imports System.Runtime.CompilerServices
 
-<Assembly: AssemblyTitle("")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyConfiguration("")>
-<Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("")>
-<Assembly: AssemblyCopyright("")>
-<Assembly: AssemblyTrademark("")>
-<Assembly: AssemblyCulture("")>
-<Assembly: AssemblyVersion("1.0.0.0")>
-<Assembly: AssemblyDelaySign(False)>
-<Assembly: AssemblyKeyFile("")>
-<Assembly: AssemblyKeyName("")>
+<Assembly:AssemblyTitle("")>
+<Assembly:AssemblyDescription("")>
+<Assembly:AssemblyConfiguration("")>
+<Assembly:AssemblyCompany("")>
+<Assembly:AssemblyProduct("")>
+<Assembly:AssemblyCopyright("")>
+<Assembly:AssemblyTrademark("")>
+<Assembly:AssemblyCulture("")>
+<Assembly:AssemblyVersion("1.0.0.0")>
+<Assembly:AssemblyDelaySign(False)>
+<Assembly:AssemblyKeyFile("")>
+<Assembly:AssemblyKeyName("")>
